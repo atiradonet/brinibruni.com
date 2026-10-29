@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="There's more coming.">
+  <meta name="description" content="Whoever is happy will make others happy too. Anne Frank.">
   <meta name="theme-color" content="#f3ede2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
-  <title>There's more coming</title>
+  <title>Whoever is happy will make others happy too</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d9542b'/%3E%3C/svg%3E">
   <style>
     :root {
@@ -82,18 +82,33 @@
       animation: pulse 2.4s ease-in-out infinite;
     }
 
-    h1 {
+    figure { margin: 0; }
+
+    blockquote {
       margin: 0;
       font-weight: 400;
-      font-size: clamp(2.75rem, 11vw, 9rem);
-      line-height: 0.98;
-      letter-spacing: -0.035em;
+      font-size: clamp(2.5rem, 8.5vw, 7rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
       text-wrap: balance;
     }
 
-    h1 em {
+    blockquote em {
       font-style: italic;
       color: var(--accent);
+    }
+
+    figcaption {
+      margin-block-start: clamp(1.5rem, 4vw, 3rem);
+      color: var(--muted);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    figcaption::before {
+      content: "\2014\00a0";
     }
 
     @keyframes pulse {
@@ -108,8 +123,13 @@
 </head>
 <body>
   <main>
-    <div class="rule" aria-hidden="true"><span class="dot"></span><span>In progress</span></div>
-    <h1>There&rsquo;s more <em>coming.</em></h1>
+    <div class="rule" aria-hidden="true"><span class="dot"></span><span>A thought</span></div>
+    <figure>
+      <blockquote>
+        <p>Whoever is happy will make <em>others happy too.</em></p>
+      </blockquote>
+      <figcaption>Anne Frank</figcaption>
+    </figure>
   </main>
 </body>
 </html>
