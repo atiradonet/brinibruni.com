@@ -154,7 +154,7 @@
           <p>Whoever is happy will make <em>others happy too.</em></p>
           <p lang="es">El que es feliz hace feliz <em>a los demás.</em></p>
         </blockquote>
-        <figcaption>Anne Frank / <span lang="es">Ana Frank</span></figcaption>
+        <figcaption><span>Anne Frank</span> / <span lang="es">Ana Frank</span></figcaption>
       </figure>
       <figure>
         <blockquote>
@@ -182,7 +182,7 @@
           <p>Very little is needed to make <em>a happy life.</em></p>
           <p lang="es">Se necesita muy poco para <em>tener una vida feliz.</em></p>
         </blockquote>
-        <figcaption>Marcus Aurelius / <span lang="es">Marco Aurelio</span></figcaption>
+        <figcaption><span>Marcus Aurelius</span> / <span lang="es">Marco Aurelio</span></figcaption>
       </figure>
       <figure>
         <blockquote>
@@ -238,7 +238,7 @@
           <p>Where there&rsquo;s hope, <em>there&rsquo;s life.</em></p>
           <p lang="es">Donde hay esperanza, <em>hay vida.</em></p>
         </blockquote>
-        <figcaption>Anne Frank / <span lang="es">Ana Frank</span></figcaption>
+        <figcaption><span>Anne Frank</span> / <span lang="es">Ana Frank</span></figcaption>
       </figure>
     </div>
   </main>
@@ -246,6 +246,8 @@
     const swapLanguages = (quote) => {
       const blockquote = quote.querySelector("blockquote");
       blockquote.append(blockquote.querySelector("p"));
+      const caption = quote.querySelector("figcaption");
+      caption.replaceChildren(...[...caption.childNodes].reverse());
     };
     const coinFlip = () => Math.floor(Math.random() * 2);
 
