@@ -82,7 +82,21 @@
       animation: pulse 2.4s ease-in-out infinite;
     }
 
-    figure { margin: 0; }
+    .quotes { display: grid; }
+
+    figure {
+      grid-area: 1 / 1;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.9s ease, visibility 0s linear 0.9s;
+    }
+
+    figure.is-active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.9s ease 0.9s, visibility 0s linear 0.9s;
+    }
 
     blockquote {
       margin: 0;
@@ -118,18 +132,85 @@
 
     @media (prefers-reduced-motion: reduce) {
       .dot { animation: none; }
+      figure, figure.is-active { transition: none; }
     }
   </style>
 </head>
 <body>
   <main>
     <div class="rule" aria-hidden="true"><span class="dot"></span><span>A thought</span></div>
-    <figure>
-      <blockquote>
-        <p>Whoever is happy will make <em>others happy too.</em></p>
-      </blockquote>
-      <figcaption>Anne Frank</figcaption>
-    </figure>
+    <div class="quotes">
+      <figure class="is-active">
+        <blockquote>
+          <p>Whoever is happy will make <em>others happy too.</em></p>
+        </blockquote>
+        <figcaption>Anne Frank</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Try to be a rainbow in <em>someone&rsquo;s cloud.</em></p>
+        </blockquote>
+        <figcaption>Maya Angelou</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Very little is needed to make <em>a happy life.</em></p>
+        </blockquote>
+        <figcaption>Marcus Aurelius</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Alone we can do so little; <em>together we can do so much.</em></p>
+        </blockquote>
+        <figcaption>Helen Keller</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>No act of kindness, no matter how small, <em>is ever wasted.</em></p>
+        </blockquote>
+        <figcaption>Aesop</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>How far that little candle <em>throws his beams!</em></p>
+        </blockquote>
+        <figcaption>William Shakespeare</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Hope is the thing <em>with feathers.</em></p>
+        </blockquote>
+        <figcaption>Emily Dickinson</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Darkness cannot drive out darkness; <em>only light can do that.</em></p>
+        </blockquote>
+        <figcaption>Martin Luther King Jr.</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>We must cultivate <em>our garden.</em></p>
+        </blockquote>
+        <figcaption>Voltaire</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Where there&rsquo;s hope, <em>there&rsquo;s life.</em></p>
+        </blockquote>
+        <figcaption>Anne Frank</figcaption>
+      </figure>
+    </div>
   </main>
+  <script>
+    const quotes = document.querySelectorAll("figure");
+    let current = 0;
+
+    setInterval(() => {
+      quotes[current].classList.remove("is-active");
+      current = (current + 1) % quotes.length;
+      quotes[current].classList.add("is-active");
+    }, 8000);
+  </script>
 </body>
 </html>
