@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Whoever is happy will make others happy too. Anne Frank.">
+  <meta name="description" content="Whoever is happy will make others happy too. El que es feliz hace feliz a los demás. Anne Frank.">
   <meta name="theme-color" content="#f3ede2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
   <title>Whoever is happy will make others happy too</title>
@@ -101,10 +101,19 @@
     blockquote {
       margin: 0;
       font-weight: 400;
-      font-size: clamp(2.5rem, 8.5vw, 7rem);
+      font-size: clamp(2.5rem, 7.5vw, 6rem);
       line-height: 1.02;
       letter-spacing: -0.03em;
       text-wrap: balance;
+    }
+
+    blockquote p { margin: 0; }
+
+    blockquote p + p {
+      margin-block-start: clamp(0.75rem, 2vw, 1.5rem);
+      font-size: max(1.2rem, 0.4em);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
     }
 
     blockquote em {
@@ -138,78 +147,128 @@
 </head>
 <body>
   <main>
-    <div class="rule" aria-hidden="true"><span class="dot"></span><span>A thought</span></div>
+    <div class="rule" aria-hidden="true"><span class="dot"></span><span>A thought / <span lang="es">Un pensamiento</span></span></div>
     <div class="quotes">
       <figure class="is-active">
         <blockquote>
           <p>Whoever is happy will make <em>others happy too.</em></p>
+          <p lang="es">El que es feliz hace feliz <em>a los demás.</em></p>
         </blockquote>
-        <figcaption>Anne Frank</figcaption>
+        <figcaption>Anne Frank / <span lang="es">Ana Frank</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Traveler, there is no road; <em>the road is made by walking.</em></p>
+          <p lang="es">Caminante, no hay camino: <em>se hace camino al andar.</em></p>
+        </blockquote>
+        <figcaption>Antonio Machado</figcaption>
       </figure>
       <figure>
         <blockquote>
           <p>Try to be a rainbow in <em>someone&rsquo;s cloud.</em></p>
+          <p lang="es">Intenta ser un arcoíris <em>en la nube de alguien.</em></p>
         </blockquote>
         <figcaption>Maya Angelou</figcaption>
       </figure>
       <figure>
         <blockquote>
-          <p>Very little is needed to make <em>a happy life.</em></p>
+          <p>Where there is a tree to plant, <em>plant it yourself.</em></p>
+          <p lang="es">Donde hay un árbol que plantar, <em>plántalo tú.</em></p>
         </blockquote>
-        <figcaption>Marcus Aurelius</figcaption>
+        <figcaption>Gabriela Mistral</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Very little is needed to make <em>a happy life.</em></p>
+          <p lang="es">Se necesita muy poco para <em>tener una vida feliz.</em></p>
+        </blockquote>
+        <figcaption>Marcus Aurelius / <span lang="es">Marco Aurelio</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote>
+          <p>Each of us is the architect <em>of our own fortune.</em></p>
+          <p lang="es">Cada uno es artífice <em>de su ventura.</em></p>
+        </blockquote>
+        <figcaption>Miguel de Cervantes</figcaption>
       </figure>
       <figure>
         <blockquote>
           <p>Alone we can do so little; <em>together we can do so much.</em></p>
+          <p lang="es">Solos podemos hacer tan poco; <em>juntos podemos hacer tanto.</em></p>
         </blockquote>
         <figcaption>Helen Keller</figcaption>
       </figure>
       <figure>
         <blockquote>
-          <p>No act of kindness, no matter how small, <em>is ever wasted.</em></p>
+          <p>I grow a white rose, <em>in July as in January.</em></p>
+          <p lang="es">Cultivo una rosa blanca, <em>en julio como en enero.</em></p>
         </blockquote>
-        <figcaption>Aesop</figcaption>
-      </figure>
-      <figure>
-        <blockquote>
-          <p>How far that little candle <em>throws his beams!</em></p>
-        </blockquote>
-        <figcaption>William Shakespeare</figcaption>
+        <figcaption>José Martí</figcaption>
       </figure>
       <figure>
         <blockquote>
           <p>Hope is the thing <em>with feathers.</em></p>
+          <p lang="es">Esperanza es la cosa <em>con plumas.</em></p>
         </blockquote>
         <figcaption>Emily Dickinson</figcaption>
       </figure>
       <figure>
         <blockquote>
+          <p>To love, to love, to love, <em>to love always.</em></p>
+          <p lang="es">Amar, amar, amar, <em>amar siempre.</em></p>
+        </blockquote>
+        <figcaption>Rubén Darío</figcaption>
+      </figure>
+      <figure>
+        <blockquote>
           <p>Darkness cannot drive out darkness; <em>only light can do that.</em></p>
+          <p lang="es">La oscuridad no puede expulsar a la oscuridad; <em>solo la luz puede hacerlo.</em></p>
         </blockquote>
         <figcaption>Martin Luther King Jr.</figcaption>
       </figure>
       <figure>
         <blockquote>
           <p>We must cultivate <em>our garden.</em></p>
+          <p lang="es">Es menester cultivar <em>nuestra huerta.</em></p>
         </blockquote>
         <figcaption>Voltaire</figcaption>
       </figure>
       <figure>
         <blockquote>
           <p>Where there&rsquo;s hope, <em>there&rsquo;s life.</em></p>
+          <p lang="es">Donde hay esperanza, <em>hay vida.</em></p>
         </blockquote>
-        <figcaption>Anne Frank</figcaption>
+        <figcaption>Anne Frank / <span lang="es">Ana Frank</span></figcaption>
       </figure>
     </div>
   </main>
   <script>
-    const quotes = document.querySelectorAll("figure");
-    let current = 0;
+    const swapLanguages = (quote) => {
+      const blockquote = quote.querySelector("blockquote");
+      blockquote.append(blockquote.querySelector("p"));
+    };
+    const coinFlip = () => Math.floor(Math.random() * 2);
+
+    // Each quote gets a hidden twin with the languages swapped, so the stack
+    // always reserves room for both arrangements and the page never jumps.
+    const quotes = [...document.querySelectorAll("figure")].map((quote) => {
+      const twin = quote.cloneNode(true);
+      twin.classList.remove("is-active");
+      swapLanguages(twin);
+      quote.after(twin);
+      return [quote, twin];
+    });
+
+    if (coinFlip()) quotes[0].forEach(swapLanguages);
+
+    let current = quotes[0][0];
+    let index = 0;
 
     setInterval(() => {
-      quotes[current].classList.remove("is-active");
-      current = (current + 1) % quotes.length;
-      quotes[current].classList.add("is-active");
+      current.classList.remove("is-active");
+      index = (index + 1) % quotes.length;
+      current = quotes[index][coinFlip()];
+      current.classList.add("is-active");
     }, 8000);
   </script>
 </body>
