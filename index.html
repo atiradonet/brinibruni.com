@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Whoever is happy will make others happy too. El que es feliz hace feliz a los demás. Anne Frank.">
   <meta name="theme-color" content="#f3ede2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
   <title>Whoever is happy will make others happy too</title>
@@ -82,17 +81,21 @@
       animation: pulse 2.4s ease-in-out infinite;
     }
 
-    .quotes { display: grid; }
+    .quotes,
+    .labels { display: grid; }
 
-    figure {
+    figure { margin: 0; }
+
+    figure,
+    .labels > span {
       grid-area: 1 / 1;
-      margin: 0;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.9s ease, visibility 0s linear 0.9s;
     }
 
-    figure.is-active {
+    figure.is-active,
+    .labels > span.is-active {
       opacity: 1;
       visibility: visible;
       transition: opacity 0.9s ease 0.9s, visibility 0s linear 0.9s;
@@ -141,13 +144,14 @@
 
     @media (prefers-reduced-motion: reduce) {
       .dot { animation: none; }
-      figure, figure.is-active { transition: none; }
+      figure, figure.is-active,
+      .labels > span, .labels > span.is-active { transition: none; }
     }
   </style>
 </head>
 <body>
   <main>
-    <div class="rule" aria-hidden="true"><span class="dot"></span><span>A thought / <span lang="es">Un pensamiento</span></span></div>
+    <div class="rule" aria-hidden="true"><span class="dot"></span><span class="labels"><span class="is-active">A thought / <span lang="es">Un pensamiento</span></span><span><span lang="es">Un pensamiento</span> / A thought</span></span></div>
     <div class="quotes">
       <figure class="is-active">
         <blockquote>
@@ -263,14 +267,24 @@
 
     if (coinFlip()) quotes[0].forEach(swapLanguages);
 
+    const labels = document.querySelectorAll(".labels > span");
     let current = quotes[0][0];
     let index = 0;
+
+    const showLabel = () => {
+      const spanishLeads = current.querySelector("p").lang === "es";
+      labels[0].classList.toggle("is-active", !spanishLeads);
+      labels[1].classList.toggle("is-active", spanishLeads);
+    };
+
+    showLabel();
 
     setInterval(() => {
       current.classList.remove("is-active");
       index = (index + 1) % quotes.length;
       current = quotes[index][coinFlip()];
       current.classList.add("is-active");
+      showLabel();
     }, 8000);
   </script>
 </body>
